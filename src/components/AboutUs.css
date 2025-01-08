@@ -1,0 +1,78 @@
+/* Add keyframes for sliding up animation */
+@keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px); /* Starts 20px down */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Ends at original position */
+    }
+  }
+  
+  .about-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    opacity: 0; /* Initially hidden */
+  }
+  
+  .about-us-container.slide-up {
+    animation: slideUp 1s ease-out forwards; /* Apply the slideUp animation when the class is added */
+  }
+  
+  .about-us-heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .about-us-title {
+    font-size: 36px;
+    color: #e91e63;
+    margin-bottom: 20px;
+  }
+  
+  .services-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .service {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Initially hidden */
+  }
+  
+  .service.slide-up {
+    animation: slideUp 1s ease-out forwards; /* Apply the slideUp animation when the class is added */
+    animation-delay: 0.2s; /* Delay animation for services */
+  }
+  
+  .service-icon {
+    width: 200px;
+    height: 150px;
+    margin-bottom: 10px;
+  }
+  
+  .service-title {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .service-description {
+    font-size: 14px;
+    color: #666;
+  }
+  

@@ -1,0 +1,48 @@
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+  }
+  
+  .text-container {
+    width: 50%;
+  }
+  
+  h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+  
+  .discover-button {
+    background-color: #f588ce;
+    color: black;
+    padding: 12px 24px; /* Reduced padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px; 
+    align-self: center;/* Set specific width */
+  }
+  .discover-button:hover{
+    background-color:#cce6ff ;
+  }
+
+  img {
+    width: 80%;
+    height: 300px; /* Reduced height */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+img:hover {
+  transform: scale(1.1); /* Zoom in effect */
+}
+
+  

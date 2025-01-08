@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+  margin-top: 70px; /* Offset for fixed navbar */
+}
+
+.main-content {
+  padding: 20px;
+}
+
+section {
+  margin: 50px 0;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}
