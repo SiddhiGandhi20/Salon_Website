@@ -1,0 +1,42 @@
+/* Styling the salon locator section */
+.salon-locator {
+    text-align: center;
+    margin-top: 60px;
+  }
+  
+  .salon-locator-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .salon-locator-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .salon-detail-card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .salon-detail-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .salon-detail-card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  iframe {
+    border-radius: 10px;
+  }
+  

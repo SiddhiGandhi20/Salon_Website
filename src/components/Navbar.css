@@ -4,6 +4,7 @@ body {
   font-family: 'Poppins', Arial, sans-serif;
   background-color: #f4f4f4;
   color: #333;
+  font-size: 16px;
 }
 
 /* Navbar Styles */
@@ -11,17 +12,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #f588ce,  #cce6ff);
+  background: linear-gradient(90deg, #f588ce, #cce6ff);
   padding: 15px 20px;
   position: fixed;
   top: 0;
   width: 100%;
-  height: 6%;
   z-index: 1000;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
 }
-
 
 .navbar-logo a {
   color: #fff;
@@ -33,7 +32,7 @@ body {
 
 .navbar-logo a:hover {
   transform: scale(1.1);
-  color:#b3d9ff;
+  color: #b3d9ff;
 }
 
 /* Navbar Menu */
@@ -47,14 +46,13 @@ body {
 .navbar-item {
   position: relative;
   margin: 0 20px;
-  margin-right: 50px;
 }
 
 .navbar-item a {
   color: black;
   text-decoration: none;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   padding: 5px 10px;
   transition: color 0.3s, background-color 0.3s;
   border-radius: 3px;
@@ -62,53 +60,10 @@ body {
 
 .navbar-item a:hover {
   background-color: white;
-  color:#f588ce;
-}
-
-/* Dropdown Menu */
-.dropdown-link::after {
-  content: " ▼";
-  font-size: 0.8rem;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  padding: 10px 0;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.dropdown-menu li {
-  padding: 8px 20px;
-}
-
-.dropdown-menu li a {
-  color: black;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s, transform 0.2s;
-}
-
-.dropdown-menu li a:hover {
-  color: #b3d9ff;
-  transform: translateX(5px);
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
+  color: #f588ce;
 }
 
 /* Hover Animations */
-.navbar a {
-  position: relative;
-  display: inline-block;
-}
-
 .navbar a::after {
   content: "";
   position: absolute;
@@ -125,6 +80,37 @@ body {
   left: 0;
 }
 
+/* Hamburger Button for Mobile */
+.navbar-toggler {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.navbar-toggler div {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler.active div:nth-child(1) {
+  transform: rotate(45deg);
+  top: 10px;
+}
+
+.navbar-toggler.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler.active div:nth-child(3) {
+  transform: rotate(-45deg);
+  top: -10px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar-menu {
@@ -133,7 +119,7 @@ body {
     background: #333;
     position: absolute;
     top: 60px;
-    right: 20px;
+    right: 10px;
     width: 250px;
     border-radius: 8px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
@@ -146,16 +132,78 @@ body {
   .navbar-item {
     margin: 10px 0;
   }
+
+  .navbar-toggler {
+    display: flex;
+  }
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+/* Dropdown Styles */
+.services-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  min-width: 800px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 4px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.dropdown-category h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.dropdown-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-category li {
+  margin: 8px 0;
+}
+
+.dropdown-category ul li a {
+  font-weight: normal;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dropdown-category ul li a:hover {
+  color: #ff69b4;
+}
+
+/* Mobile Dropdown Adjustments */
+@media (max-width: 768px) {
+  .dropdown-content {
+    position: static;
+    min-width: auto;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    margin-top: 0;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .dropdown-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }

@@ -1,60 +1,60 @@
-.container {
-    text-align: center;
-    margin: 20px;
-    padding: 20px;
-    background-color: #e6f2ff;
-  }
-  
-  .heading {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .line {
-    width: 50px;
-    height: 3px;
-    background-color: #f76c6c;
-    margin: 0 auto 20px;
-  }
-  
-  .paragraph {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 30px;
-  }
-  
-  .services-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .service-card {
-    width: 200px;
-    text-align: center;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color: #fff;
-    transition: transform 0.3s;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-10px);
-  }
-  
-  .service-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .service-title {
-    margin-top: 10px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #333;
-  }
-  
+.trending-container {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f1f8ff;
+}
+
+.trending-heading {
+  font-size: 2.8rem;
+  color: #2d2d2d;
+  margin-bottom: 15px;
+}
+
+.trending-line {
+  width: 60px;
+  height: 4px;
+  background-color: #ff6b6b;
+  margin: 0 auto 25px;
+}
+
+.trending-paragraph {
+  font-size: 1.1rem;
+  color: #777;
+  margin-bottom: 35px;
+}
+
+.trending-services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.unique-service-card {
+  width: 220px;
+  text-align: center;
+  padding: 18px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.unique-service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.unique-service-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.unique-service-title {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2d2d2d;
+}

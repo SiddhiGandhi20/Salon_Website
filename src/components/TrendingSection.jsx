@@ -3,15 +3,15 @@ import './TrendingSection.css';
 
 function TrendingSection() {
   return (
-    <div className="container">
-      <h1 className="heading">TRENDSETTING SERVICES</h1>
-      <div className="line"></div>
-      <p className="paragraph">
-        Our runway experts have curated some of the most popular services at Lakmé Salon, just for you. Take your pick and head to your nearest salon and get started on your makeover!
+    <div className="trending-container">
+      <h1 className="trending-heading">TRENDSETTING SERVICES</h1>
+      <div className="trending-line"></div>
+      <p className="trending-paragraph">
+        Our runway experts have curated some of the most popular services at Salon, just for you. Take your pick and head to your nearest salon and get started on your makeover!
       </p>
-      <div className="services-grid">
+      <div className="trending-services-grid">
         <ServiceCard
-          imageSrc="img3.jpg" // Use absolute path for public folder
+          imageSrc="img3.jpg"
           title="Pedicure & Manicure"
         />
         <ServiceCard
@@ -37,9 +37,9 @@ function TrendingSection() {
 
 function ServiceCard({ imageSrc, title }) {
   return (
-    <div className="service-card">
-      <img src={imageSrc} alt={title} className="service-image" />
-      <p className="service-title">{title}</p>
+    <div className="unique-service-card">
+      <img src={imageSrc} alt={title} className="unique-service-image" />
+      <p className="unique-service-title">{title}</p>
     </div>
   );
 }

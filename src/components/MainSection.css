@@ -35,13 +35,12 @@
     background-color:#cce6ff ;
   }
 
-  img {
+.mainsection {
     width: 80%;
     height: 300px; /* Reduced height */
     transition: transform 0.3s ease; /* Smooth transition */
 }
-
-img:hover {
+.mainsection:hover {
   transform: scale(1.1); /* Zoom in effect */
 }
 

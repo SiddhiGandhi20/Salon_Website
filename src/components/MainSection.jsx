@@ -20,6 +20,7 @@ const MainSection = () => {
       <div className="image-container">
         <img
           src="img14.jpg"
+          class="mainsection"
           alt="Woman with purple and pink hair"
         />
       </div>

@@ -14,7 +14,7 @@ const GiftCard = () => {
           <br />
           How about gifting them some much-needed pampering?
           <br />
-          Get them a Lakmé Salon gift card today!
+          Get them a Salon gift card today!
         </p>
         <button className="buy-now-button">BUY NOW</button>
         <p>*Terms & Conditions apply</p>

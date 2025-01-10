@@ -69,7 +69,8 @@
   
   .footer-contact li {
     margin: 5px 0; /* Reduced spacing */
-    font-size: 14px; /* Smaller font */
+    font-size: 14px;
+    color: #fff; /* Smaller font */
   }
   
   .footer-contact i {
