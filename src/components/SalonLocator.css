@@ -1,42 +1,62 @@
-/* Styling the salon locator section */
+/* Overall container styling */
 .salon-locator {
-    text-align: center;
-    margin-top: 60px;
-  }
-  
-  .salon-locator-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .salon-locator-map {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .salon-detail-card {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    padding: 15px;
-    width: 100%;
-    max-width: 600px;
-    margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .salon-detail-card h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .salon-detail-card p {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  iframe {
-    border-radius: 10px;
-  }
-  
+  text-align: center;
+  margin-top: 60px;
+  padding: 20px;
+  background-color: #cce6ff;
+}
+
+/* Title styling */
+.salon-locator-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Map container */
+.salon-locator-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Individual salon card styling */
+.salon-detail-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Add hover effect */
+.salon-detail-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Salon name styling */
+.salon-detail-card h4 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* Phone number styling */
+.salon-detail-card p {
+  font-size: 16px;
+  color: #666;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* iframe styling */
+iframe {
+  border-radius: 8px;
+  margin-bottom: 15px;
+}

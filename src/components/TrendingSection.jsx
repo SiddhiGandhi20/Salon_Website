@@ -10,36 +10,27 @@ function TrendingSection() {
         Our runway experts have curated some of the most popular services at Salon, just for you. Take your pick and head to your nearest salon and get started on your makeover!
       </p>
       <div className="trending-services-grid">
-        <ServiceCard
-          imageSrc="img3.jpg"
-          title="Pedicure & Manicure"
-        />
-        <ServiceCard
-          imageSrc="img4.jpg"
-          title="Beauty Sutra Facial"
-        />
-        <ServiceCard
-          imageSrc="img5.jpg"
-          title="Ethereal Bloom Bridal Makeup Collection"
-        />
-        <ServiceCard
-          imageSrc="img6.jpg"
-          title="Elemental Symphony- Cut & Colour Collection"
-        />
-        <ServiceCard
-          imageSrc="img7.jpg"
-          title="Everyday Glam Makeup"
-        />
+        <div className="unique-service">
+          <img src="img3.jpg" alt="Pedicure & Manicure" className="unique-service-image" />
+          <p className="unique-service-title">Pedicure & Manicure</p>
+        </div>
+        <div className="unique-service">
+          <img src="img4.jpg" alt="Beauty Sutra Facial" className="unique-service-image" />
+          <p className="unique-service-title">Beauty Sutra Facial</p>
+        </div>
+        <div className="unique-service">
+          <img src="img5.jpg" alt="Ethereal Bloom Bridal Makeup Collection" className="unique-service-image" />
+          <p className="unique-service-title">Ethereal Bloom Bridal Makeup Collection</p>
+        </div>
+        <div className="unique-service">
+          <img src="img6.jpg" alt="Elemental Symphony- Cut & Colour Collection" className="unique-service-image" />
+          <p className="unique-service-title">Elemental Symphony- Cut & Colour Collection</p>
+        </div>
+        <div className="unique-service">
+          <img src="img7.jpg" alt="Everyday Glam Makeup" className="unique-service-image" />
+          <p className="unique-service-title">Everyday Glam Makeup</p>
+        </div>
       </div>
-    </div>
-  );
-}
-
-function ServiceCard({ imageSrc, title }) {
-  return (
-    <div className="unique-service-card">
-      <img src={imageSrc} alt={title} className="unique-service-image" />
-      <p className="unique-service-title">{title}</p>
     </div>
   );
 }

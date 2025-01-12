@@ -1,78 +1,140 @@
-/* Add keyframes for sliding up animation */
-@keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px); /* Starts 20px down */
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0); /* Ends at original position */
-    }
+/* Keyframes for different slide-in effects */
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%); /* Start off-screen to the right */
   }
-  
-  .about-us-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #f9f9f9;
-    opacity: 0; /* Initially hidden */
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Slide in to the original position */
   }
-  
-  .about-us-container.slide-up {
-    animation: slideUp 1s ease-out forwards; /* Apply the slideUp animation when the class is added */
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%); /* Start off-screen to the left */
   }
-  
-  .about-us-heading {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Slide in to the original position */
   }
-  
-  .about-us-title {
-    font-size: 36px;
-    color: #e91e63;
-    margin-bottom: 20px;
+}
+
+@keyframes slideFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%); /* Start off-screen from above */
   }
-  
-  .services-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Slide in to the original position */
   }
-  
-  .service {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 10px;
-    text-align: center;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    opacity: 0; /* Initially hidden */
+}
+
+@keyframes slideFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%); /* Start off-screen from below */
   }
-  
-  .service.slide-up {
-    animation: slideUp 1s ease-out forwards; /* Apply the slideUp animation when the class is added */
-    animation-delay: 0.2s; /* Delay animation for services */
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Slide in to the original position */
   }
-  
-  .service-icon {
-    width: 200px;
-    height: 150px;
-    margin-bottom: 10px;
-  }
-  
-  .service-title {
-    font-size: 20px;
-    color: #333;
-    margin: 10px 0;
-  }
-  
-  .service-description {
-    font-size: 14px;
-    color: #666;
-  }
-  
+}
+
+/* Container for About Us section */
+.about-us-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: #f4f4f4;
+  opacity: 0; /* Initially hidden */
+}
+
+.about-us-container.fade-in {
+  animation: fadeIn 1s ease-out forwards; /* Apply fade-in effect */
+}
+
+.about-us-heading {
+  font-size: 22px;
+  color: #444;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.about-us-title {
+  font-size: 32px;
+  color: #e91e63;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Grid container for the service items */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+  gap: 20px;
+  width: 100%;
+  justify-items: center; /* Center items */
+  margin-top: 20px;
+}
+
+/* Service item styling */
+.service {
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start slightly below */
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.service:nth-child(1) {
+  animation: slideFromLeft 1s ease-out forwards;
+}
+
+.service:nth-child(2) {
+  animation: slideFromRight 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.service:nth-child(3) {
+  animation: slideFromTop 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.service:nth-child(4) {
+  animation: slideFromBottom 1s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+/* Hover effect */
+.service-icon {
+  width: 200px;
+  height: 150px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease-in-out; /* Smooth zoom on icon hover */
+}
+
+.service-icon:hover {
+  transform: scale(1.05); /* Slight zoom on icon */
+}
+
+/* Service title styling */
+.service-title {
+  font-size: 20px;
+  color: #333;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Service description styling */
+.service-description {
+  font-size: 14px;
+  color: #666;
+  padding: 0 15px;
+  font-style: italic;
+  margin-top: 10px;
+}

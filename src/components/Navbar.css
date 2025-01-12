@@ -48,9 +48,10 @@ body {
   margin: 0 20px;
 }
 
+/* Remove underline from links */
 .navbar-item a {
   color: black;
-  text-decoration: none;
+  text-decoration: none !important;  /* Ensure no underline */
   font-size: 1rem;
   font-weight: 600;
   padding: 5px 10px;
@@ -61,6 +62,11 @@ body {
 .navbar-item a:hover {
   background-color: white;
   color: #f588ce;
+}
+
+/* Remove underline on hover as well */
+.navbar-item a:hover::after {
+  content: none;
 }
 
 /* Hover Animations */
@@ -78,6 +84,14 @@ body {
 .navbar a:hover::after {
   width: 100%;
   left: 0;
+}
+.navbar .navbar-menu .navbar-item .dropdown-link {
+  text-decoration: none;
+}
+
+/* Style for active link - removes underline */
+.navbar .navbar-menu .navbar-item .dropdown-link.active {
+  text-decoration: none;
 }
 
 /* Hamburger Button for Mobile */
@@ -144,24 +158,30 @@ body {
   display: inline-block;
 }
 
+.navbar-menu a[href="/services"] {
+  text-decoration: none; /* Ensure no underline */
+}
+
+.navbar-menu a[href="/services"]::after {
+  content: none; /* Remove underline effect */
+}
+
 .dropdown-content {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background-color: white;
-  min-width: 800px;
+  width: 200px; /* Adjust the width of the dropdown */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   border-radius: 4px;
-  padding: 20px;
+  padding: 10px;
   margin-top: 10px;
 }
 
-.dropdown-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+.dropdown-category {
+  margin-bottom: 10px; /* Add spacing between categories */
 }
 
 .dropdown-category h3 {
@@ -184,12 +204,12 @@ body {
 .dropdown-category ul li a {
   font-weight: normal;
   color: #555;
-  text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .dropdown-category ul li a:hover {
   color: #ff69b4;
+  text-decoration: none;
 }
 
 /* Mobile Dropdown Adjustments */
@@ -203,7 +223,11 @@ body {
     margin-top: 0;
   }
 
-  .dropdown-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  .dropdown-category h3 {
+    font-size: 1rem;
+  }
+
+  .dropdown-category ul li a {
+    font-size: 0.9rem;
   }
 }

@@ -1,51 +1,33 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Ensure this import is present
+import { Link } from "react-router-dom";
 import "./Navbar.css";
-const serviceCategories = {
 
+const serviceCategories = {
   Skin: {
     link: '/skin',
-    items: [
-      { name: 'Waxing', link: '/skin' },
-      { name: 'Threading', link: '/skin' },
-      { name: 'Facial', link: '/skin' },
-      { name: 'Mask', link: '/skin' },
-      { name: 'Spa', link: '/skin' },
-    ],
   },
   Hair: {
     link: '/hair',
-    items: [
-      { name: 'Haircut', link: '/hair' },
-      { name: 'Hair Color', link: '/hair' },
-      { name: 'Hair Treatments', link: '/hair' },
-      { name: 'Styling', link: '/hair' },
-      { name: 'Texture', link: '/hair' }
-    ],
   },
   Makeup: {
     link: '/makeup',
-    items: [
-      { name: 'Trend and Side Dressing', link: '/makeup' },
-      { name: 'Bridal', link: '/makeup' },
-      { name: 'Spot Makeup Services', link: '/makeup' }
-    ],
   },
   'Hands & Feet': {
     link: '/hands-and-feet',
-    items: [
-      { name: 'Hand Care', link: '/hands-and-feet' },
-      { name: 'Feet Care', link: '/hands-and-feet' },
-      { name: 'Nails', link: '/hands-and-feet' }
-    ],
   },
 };
 
 const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState(null); // Track active link
 
   const handleServicesMouseEnter = () => setIsServicesOpen(true);
   const handleServicesMouseLeave = () => setTimeout(() => setIsServicesOpen(false), 100);
+
+  const handleLinkClick = (e) => {
+    // Set the clicked link as active
+    setActiveLink(e.target.getAttribute("href"));
+  };
 
   return (
     <nav className="navbar">
@@ -58,49 +40,65 @@ const Navbar = () => {
           onMouseEnter={handleServicesMouseEnter}
           onMouseLeave={handleServicesMouseLeave}
         >
-          <Link to="/services" className="dropdown-link">
-            <strong>Services</strong>
-          </Link>
+        <Link
+          to="/services"
+          className={`dropdown-link ${activeLink === "/services" ? "active" : ""}`}
+          onClick={(e) => {
+            e.preventDefault();  // Prevent navigation
+            handleLinkClick(e);  // Handle active link change
+          }}
+        >
+          <strong>Services</strong>
+        </Link>
+
 
           {isServicesOpen && (
             <div className="dropdown-content">
-            <div className="dropdown-grid">
-              {Object.entries(serviceCategories).map(([category, { link, items }]) => (
-                <div key={category} className="dropdown-category">
-                  <h3>
-                    <a href={link}>{category}</a>
-                  </h3>
-                  <ul>
-                    {items.map((item) => (
-                      <li key={item.name}>
-                        <a href={item.link}>{item.name}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+              <div className="dropdown-grid">
+                {Object.entries(serviceCategories).map(([category, { link }]) => (
+                  <div key={category} className="dropdown-category">
+                    <h3>
+                      <a href={link}>{category}</a>
+                    </h3>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-          
           )}
         </li>
         <li className="navbar-item">
-        <Link to="/bridal" className="dropdown-link">
-           Bridal
+          <Link
+            to="/bridal"
+            className={`dropdown-link ${activeLink === "/bridal" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
+            Bridal
           </Link>
         </li>
         <li className="navbar-item">
-          <Link to="/book-appointment" className="dropdown-link">
+          <Link
+            to="/book-appointment"
+            className={`dropdown-link ${activeLink === "/book-appointment" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
             Book An Appointment
           </Link>
         </li>
         <li className="navbar-item">
-          <Link to="/contactus" className="dropdown-link">
+          <Link
+            to="/contactus"
+            className={`dropdown-link ${activeLink === "/contactus" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
             Contact Us
           </Link>
         </li>
         <li className="navbar-item">
-        <Link to="/salonlocator" className="dropdown-link">
+          <Link
+            to="/salonlocator"
+            className={`dropdown-link ${activeLink === "/salonlocator" ? "active" : ""}`}
+            onClick={handleLinkClick}
+          >
             Salon Locator
           </Link>
         </li>

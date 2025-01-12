@@ -1,6 +1,4 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
 import "./SalonLocator.css";
 
 const SalonLocator = () => {
@@ -21,7 +19,6 @@ const SalonLocator = () => {
         {salons.map((salon) => (
           <div key={salon.name} className="salon-detail-card">
             <h4>{salon.name}</h4>
-            <p>Phone: {salon.phone}</p>
             <iframe
               src={salon.googleMapsUrl}
               width="100%"
@@ -31,6 +28,7 @@ const SalonLocator = () => {
               loading="lazy"
               title={`Google Maps - ${salon.name}`}
             ></iframe>
+            <p>{salon.phone}</p>
           </div>
         ))}
       </div>
